@@ -13,10 +13,10 @@ public class TestLibrary {
     }
 
     @Test
-    public void testgetBookList(){
+    public void testgetBookInfo(){
         String[] BookList= this.library.getBookList();
-        assertEquals("book1",BookList[0]);
-        assertEquals("book2",BookList[1]);
-        assertEquals("book3",BookList[2]);
+        assertEquals("book1-author1-2001",BookList[0]);
+        assertEquals("book2-author2-2002",BookList[1]);
+        assertEquals("book3-author3-2003",BookList[2]);
     }
 }

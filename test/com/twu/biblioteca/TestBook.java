@@ -9,11 +9,11 @@ public class TestBook {
 
     @Before
     public void creatBook(){
-        this.book = new Book("book1");
+        this.book = new Book("book1","author1","2001");
     }
 
     @Test
-    public void testBookTitle(){
-        assertEquals("book1",this.book.getBookTitle());
+    public void testBookInfo(){
+        assertEquals("book1-author1-2001",this.book.getBookInfo());
     }
 }
