@@ -22,8 +22,11 @@ public class BibliotecaApp {
         if(choice==0) System.exit(0);
         menu.showInterface(choice);
 
-        library.checkOutBook("book4");
+        library.checkOutBook("book1");
         menu.showInterface(1); //test whether the book has been checkedout
+
+        library.returnBook("book1");
+        menu.showInterface(1);
 
     }
 }
