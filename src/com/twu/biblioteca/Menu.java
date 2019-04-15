@@ -9,6 +9,8 @@ public class Menu {
         this.menuOfOptions = menuOfOptions;
         this.library=library;
     }
+
+    //判断登录
     public Boolean checkCusInf(String id,String passsWord){
         for(CustomerInfo cusInfo:this.library.getCustomerInfos()){
             if(cusInfo.getId().equals(id)&&cusInfo.getPassword().equals(passsWord)) return true;

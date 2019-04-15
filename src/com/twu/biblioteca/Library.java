@@ -7,6 +7,7 @@ public class Library {
     private List<Book> books = new ArrayList<Book>();
     private List<Movies> movies=new ArrayList<Movies>();
     private List<CustomerInfo> customerInfos=new ArrayList<CustomerInfo>();
+
     public Library() {
         this.books.add(new Book("book1", "author1", "2001"));
         this.books.add(new Book("book2", "author2", "2002"));
@@ -20,7 +21,7 @@ public class Library {
         this.customerInfos.add(new CustomerInfo("002","222","two","222@002.com","88888882"));
         this.customerInfos.add(new CustomerInfo("003","333","three","333@003.com","88888883"));
     }
-
+    //所有未借出书籍信息
     public String[] getBookList() {
         String[] BookList = new String[books.size()];
 
@@ -31,7 +32,7 @@ public class Library {
         }
         return BookList;
     }
-
+    //所有未借出电影信息
     public String[] getMovieList(){
         String[] movieList = new String[movies.size()];
         for(int i =0;i<movies.size();i++){
@@ -42,6 +43,7 @@ public class Library {
         return movieList;
     }
 
+    //借书
     public void checkOutBook(String name) {
         boolean flag = false;
         for (Book book : this.books
@@ -57,6 +59,8 @@ public class Library {
         if(flag) System.out.println("Thank you! Enjoy the book");
         else System.out.println("Sorry ,that book is not available");
     }
+
+    //借电影
     public void checkOutMovie(String name) {
         boolean flag = false;
         for (Movies movie : this.movies
@@ -73,13 +77,13 @@ public class Library {
         else System.out.println("Sorry ,that movie is not available");
     }
 
+    //换书，借书还书都采用设置ischeck表示，
     public  void returnBook (String name) {
         boolean flag = false;
         for (Book book : this.books) {
             if (name.equals(book.getTitle())) {
                 if (book.getIsCheckout()) {
                     book.setIsCheckout(false);
-
                     flag = true;
                 }
             }

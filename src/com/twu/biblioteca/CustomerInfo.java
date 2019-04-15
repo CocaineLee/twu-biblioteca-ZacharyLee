@@ -18,6 +18,7 @@ public class CustomerInfo {
     public String getId(){return this.id;}
     public String getPassword(){return this.password;}
 
+    //准备输出顾客信息
     public String getCustomerINfo(){
         String customerInfo=String.format("%s-%s-%s",this.name,this.email,this.phoneNum);
         return customerInfo;

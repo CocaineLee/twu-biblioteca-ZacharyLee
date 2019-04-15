@@ -6,7 +6,7 @@ public class Book {
     private String publishDate;
     private boolean isCheckout;
 
-    public Book(){}
+   // public Book(){}
     public String getTitle(){
         return this.title;
     }
@@ -19,6 +19,8 @@ public class Book {
         this.publishDate=publishDate;
         this.isCheckout = false;
     }
+
+    //准备输出书籍信息
     public String getBookInfo(){
         String BookInfo=String.format("%s-%s-%s",this.title,this.author,this.publishDate);
         return BookInfo;
