@@ -9,7 +9,13 @@ public class Menu {
         this.menuOfOptions = menuOfOptions;
         this.library=library;
     }
+    public Boolean checkCusInf(String id,String passsWord){
+        for(CustomerInfo cusInfo:this.library.getCustomerInfos()){
+            if(cusInfo.getId().equals(id)&&cusInfo.getPassword().equals(passsWord)) return true;
 
+        }
+        return false;
+    }
 
     public void beforeLead(){
         System.out.println("Please choose the option by num,press 0 to quit");
@@ -28,6 +34,12 @@ public class Menu {
             for (String bookTitle:bookList
             ) {
                 System.out.println(bookTitle);
+            }
+        }
+        if(choice==2){
+            String[] movieList=this.library.getMovieList();
+            for(String movie:movieList){
+                System.out.println(movie);
             }
         }
         else{

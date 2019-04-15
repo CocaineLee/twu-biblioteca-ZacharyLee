@@ -27,6 +27,6 @@ public class BibliotecaApp {
 
         library.returnBook("book1");
         menu.showInterface(1);
-
+        menu.showInterface(2);
     }
 }
